@@ -1,5 +1,6 @@
 import 'package:crm_app/screens/contact_detail_screen.dart';
 import 'package:crm_app/screens/customer_detail_screen.dart';
+import 'package:crm_app/screens/oportunity_detail_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../screens/contact_screen.dart';
@@ -49,6 +50,8 @@ class _HomeScreen extends State<HomeScreen> {
         "/detCustomer": (context) => CustomerDetailScreen(),
         "/catContact": (context) => ContactScreen(),
         "/detContact": (context) => ContactDetailScreen(),
+        "/catOportunity": (context) => OportunityScreen(),
+        "/detOportunity": (context) => OportunityDetailScreen(),
       },
       title: 'Material App',
       debugShowCheckedModeBanner: false,
