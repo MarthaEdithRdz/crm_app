@@ -1,6 +1,7 @@
 import 'package:crm_app/screens/contact_detail_screen.dart';
 import 'package:crm_app/screens/customer_detail_screen.dart';
 import 'package:crm_app/screens/oportunity_detail_screen.dart';
+import 'package:crm_app/screens/reminder_detail_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../screens/contact_screen.dart';
@@ -52,6 +53,8 @@ class _HomeScreen extends State<HomeScreen> {
         "/detContact": (context) => ContactDetailScreen(),
         "/catOportunity": (context) => OportunityScreen(),
         "/detOportunity": (context) => OportunityDetailScreen(),
+        "/catReminder": (context) => ReminderScreen(),
+        "/detReminder": (context) => ReminderDetailScreen()
       },
       title: 'Material App',
       debugShowCheckedModeBanner: false,
