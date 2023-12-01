@@ -17,6 +17,8 @@ class _SingUpScreenState extends State<SingUpScreen> {
   final TextEditingController _passController = TextEditingController();
   final TextEditingController _repassController = TextEditingController();
 
+  final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +36,7 @@ class _SingUpScreenState extends State<SingUpScreen> {
           ),*/
           Container(
             padding: EdgeInsets.all(20),
-            color: const Color(0xFF9F7BFF),
+            color: Color.fromRGBO(159, 123, 255, 1),
             child: Image.asset(
               'assets/images/crm.jpeg',
               fit: BoxFit.contain,
@@ -46,84 +48,113 @@ class _SingUpScreenState extends State<SingUpScreen> {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 50),
-            child: Column(
-              textDirection: TextDirection.ltr,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const TitleText(text: 'Crear nueva cuenta'),
-                const SizedBox(
-                  height: 20,
-                ),
-                TextFieldMain(
-                    textController: _nameController,
-                    labelText: 'Nombre completo',
-                    icon: Icons.person),
-                const SizedBox(
-                  height: 20,
-                ),
-                TextFieldMain(
-                    textController: _emailController,
-                    labelText: 'Correo',
-                    icon: Icons.email),
-                const SizedBox(
-                  height: 20,
-                ),
-                TextFieldMain(
-                    textController: _passController,
-                    labelText: 'Contraseña',
-                    icon: Icons.lock),
-                const SizedBox(
-                  height: 20,
-                ),
-                TextFieldMain(
-                    textController: _repassController,
-                    labelText: 'Confirmar Contraseña',
-                    icon: Icons.lock),
-                const SizedBox(
-                  height: 25,
-                ),
-                ButtonMain(
-                  width: 329,
-                  height: 56,
-                  text: 'Crear cuenta',
-                  onPressed: () {},
-                ),
-                const SizedBox(
-                  height: 25,
-                ),
-                Row(
-                  children: [
-                    const Text(
-                      ' ¿Tienes cuenta? ',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Color(0xFF837E93),
-                        fontSize: 16,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w500,
+            child: Form(
+              key: _formKey,
+              child: Column(
+                textDirection: TextDirection.ltr,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const TitleText(text: 'Crear nueva cuenta'),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  TextFieldMain(
+                      textController: _nameController,
+                      labelText: 'Nombre completo',
+                      icon: Icons.person,
+                      validator: (value) {
+                        if (value == '') {
+                          return 'El nombre no puede ser nulo';
+                        }
+                      }),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  TextFieldMain(
+                      textController: _emailController,
+                      labelText: 'Correo',
+                      icon: Icons.email,
+                      validator: (value) {
+                        if (value == '') {
+                          return 'El correo no puede ser nulo';
+                        }
+                      }),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  TextFieldMain(
+                      textController: _passController,
+                      labelText: 'Contraseña',
+                      icon: Icons.lock,
+                      obscureText: true,
+                      validator: (value) {
+                        if (value == '') {
+                          return 'La contraseña no puede ser nula';
+                        }
+                      }),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  TextFieldMain(
+                      textController: _repassController,
+                      labelText: 'Confirmar Contraseña',
+                      icon: Icons.lock,
+                      obscureText: true,
+                      validator: (value) {
+                        if (value != _passController.text) {
+                          return 'El valor de la contraseña no coincide';
+                      }}),
+                  const SizedBox(
+                    height: 25,
+                  ),
+                  ButtonMain(
+                    width: 329,
+                    height: 56,
+                    text: 'Crear cuenta',
+                    onPressed: () async{
+                      if (_formKey.currentState!.validate()) {
+
+              
+                      }
+                    },
+                  ),
+                  const SizedBox(
+                    height: 25,
+                  ),
+                  Row(
+                    children: [
+                      const Text(
+                        ' ¿Tienes cuenta? ',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Color(0xFF837E93),
+                          fontSize: 16,
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
-                    ),
-                    const SizedBox(
-                      width: 2.5,
-                    ),
-                    InkWell(
-                      onTap: () {},
-                      child: TextButton(
-                        onPressed: () => Navigator.pop(context),
-                        child: const Text(
-                          'Accede',
-                          style: TextStyle(
-                            color: Color(0xFF755DC1),
-                            fontSize: 16,
-                            fontFamily: 'Poppins',
-                            fontWeight: FontWeight.w500,
+                      const SizedBox(
+                        width: 2.5,
+                      ),
+                      InkWell(
+                        onTap: () {},
+                        child: TextButton(
+                          onPressed: () => Navigator.pop(context),
+                          child: const Text(
+                            'Accede',
+                            style: TextStyle(
+                              color: Color(0xFF755DC1),
+                              fontSize: 16,
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-              ],
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ],

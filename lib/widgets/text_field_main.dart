@@ -5,18 +5,23 @@ class TextFieldMain extends StatelessWidget {
     super.key,
     required TextEditingController textController,
     required this.labelText,
-    required this.icon,
+    required this.icon,  this.obscureText=false, this.validator,
   }) : _emailController = textController;
 
   final TextEditingController _emailController;
   final String labelText;
   final IconData icon;
+  final bool obscureText;
 
+  final String? Function(String?)? validator;
+  
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
       controller: _emailController,
       textAlign: TextAlign.justify,
+      obscureText: obscureText,
+      validator: validator,
       style: const TextStyle(
         color: Color(0xFF393939),
         fontSize: 15,

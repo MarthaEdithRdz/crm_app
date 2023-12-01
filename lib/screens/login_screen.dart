@@ -50,7 +50,8 @@ class _LoginScreenState extends State<LoginScreen> {
         
               TextFieldMain(labelText: 'Contraseña',
               icon: Icons.lock,
-              textController: _passController,),
+              textController: _passController,
+              obscureText: true,),
               
               const SizedBox(
               height: 18,
