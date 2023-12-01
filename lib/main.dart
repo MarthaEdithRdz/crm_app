@@ -1,3 +1,4 @@
+import 'package:crm_app/screens/home_screen.dart';
 import 'package:crm_app/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
 import './screens/login_screen.dart';
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
       initialRoute: "/",
       routes: {
         '/': (context) =>  LoginScreen(),
-        '/registro': (context) => const SingUpScreen()
+        '/registro': (context) => const SingUpScreen(),
+        '/home': (context) =>  const HomeScreen()
       },
       theme: ThemeData(
         // This is the theme of your application.

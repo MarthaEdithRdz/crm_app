@@ -96,7 +96,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             if (res != 1) {
                               _showMyDialog();
                             } else {
-                              
+                              Navigator.pushReplacementNamed(context, "/home");
                             }
                             }
                             });
