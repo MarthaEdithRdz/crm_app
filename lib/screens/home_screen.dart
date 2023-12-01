@@ -1,3 +1,4 @@
+import 'package:crm_app/screens/contact_detail_screen.dart';
 import 'package:crm_app/screens/customer_detail_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -46,6 +47,8 @@ class _HomeScreen extends State<HomeScreen> {
       routes: {
         "/catCustomer": (context) => CustomerScreen(),
         "/detCustomer": (context) => CustomerDetailScreen(),
+        "/catContact": (context) => ContactScreen(),
+        "/detContact": (context) => ContactDetailScreen(),
       },
       title: 'Material App',
       debugShowCheckedModeBanner: false,
