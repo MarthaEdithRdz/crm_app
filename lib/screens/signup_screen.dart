@@ -3,6 +3,8 @@ import '../widgets/title_text.dart';
 import '../widgets/text_field_main.dart';
 import '../widgets/button_main.dart';
 import '../widgets/app_bar_widget.dart';
+import '../data/user_data.dart';
+import '../model/user_model.dart';
 
 class SingUpScreen extends StatefulWidget {
   const SingUpScreen({super.key});
@@ -114,7 +116,20 @@ class _SingUpScreenState extends State<SingUpScreen> {
                     onPressed: () async{
                       if (_formKey.currentState!.validate()) {
 
-              
+                          User obj = User(
+                          id: 0,
+                          name: _nameController.text,
+                          email: _emailController.text,
+                          password: _passController.text,
+                        );
+
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                              content: Text('Usuario creado con éxito')),
+                        );
+                        await insertUser(obj).then((_) {
+                          Navigator.pop(context);
+                        });
                       }
                     },
                   ),
