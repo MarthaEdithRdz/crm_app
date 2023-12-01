@@ -1,3 +1,4 @@
+import 'package:crm_app/screens/customer_detail_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../screens/contact_screen.dart';
@@ -42,6 +43,10 @@ class _HomeScreen extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+        "/catCustomer": (context) => CustomerScreen(),
+        "/detCustomer": (context) => CustomerDetailScreen(),
+      },
       title: 'Material App',
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -50,6 +55,7 @@ class _HomeScreen extends State<HomeScreen> {
         body: _screenOptions.elementAt(_selectedIndex),
         bottomNavigationBar: BottomNavigationBar(
             onTap: _onItemTapped,
+            selectedItemColor:Color.fromARGB(255, 128, 100, 205) ,
             currentIndex: _selectedIndex,
             type: BottomNavigationBarType.fixed,
             items: const [
