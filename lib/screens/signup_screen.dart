@@ -6,6 +6,8 @@ import '../widgets/app_bar_widget.dart';
 import '../data/user_data.dart';
 import '../model/user_model.dart';
 
+import '../utils/validator.dart';
+
 class SingUpScreen extends StatefulWidget {
   const SingUpScreen({super.key});
 
@@ -79,6 +81,9 @@ class _SingUpScreenState extends State<SingUpScreen> {
                       validator: (value) {
                         if (value == '') {
                           return 'El correo no puede ser nulo';
+                        }
+                        if (!isValidEmail(_emailController.text)) {
+                          return 'Correo inválido';
                         }
                       }),
                   const SizedBox(
