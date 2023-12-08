@@ -1,10 +1,26 @@
 # crm_app
 
-A new Flutter project.
+Código de la aplicación móvil desarrollada en Flutter para crear el repositorio de oportunidades de ventas, contactos, clientes y recordatorios usando CRM
 
-# Problema identificado
+## Problema identificado
 Actualmente en la organización no cuenta con un repositorio en el cual ingresar las oportunidades de venta, contactos de los prospectos, seguimiento de las oportunidades, fechas del proceso de ventas, entre otros, por lo cual, la dirección comercial ha solicitado el desarrollo/implementación de un CRM.
+Esto origina pérdida de oportunidades de cierre de negocios, pérdida de información de clientes al momento de que un ejecutivo sale de la compañía o cambia de cuentas, falta de comunicación entre la fuerza de ventas y baja productividad para el servicio al cliente.
 
+## Solución
+Desarrollo de una aplicación que permita al equipo de ventas crear ese repositorio que necesitan.
+Esta aplicación permitirá registrar al usuario para después hacer loggin y así proteger la información que se encuentre dentro
+Permitirá dar de alta y ver el catálogo de clientes, contactos, oportunidades y también los recordatorios
+
+## Arquitectura
+Tendremos 3 partes funamentales
+Frontend 
+  Pantallas que serán visibles al usuario 
+
+Backend 
+  Que será la parte que nos dará acceso a la información
+
+Modelo
+  Estructura para llenar los datos
 
 ## Getting Started
 
