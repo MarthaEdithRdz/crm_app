@@ -2,6 +2,10 @@
 
 A new Flutter project.
 
+# Problema identificado
+Actualmente en la organización no cuenta con un repositorio en el cual ingresar las oportunidades de venta, contactos de los prospectos, seguimiento de las oportunidades, fechas del proceso de ventas, entre otros, por lo cual, la dirección comercial ha solicitado el desarrollo/implementación de un CRM.
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
