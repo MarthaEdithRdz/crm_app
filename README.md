@@ -13,17 +13,28 @@ Permitirá dar de alta y ver el catálogo de clientes, contactos, oportunidades 
 
 ## Arquitectura
 Tendremos 3 partes funamentales
+
 Frontend 
+
   Pantallas que serán visibles al usuario 
 
 Backend 
+
   Que será la parte que nos dará acceso a la información
 
 Modelo
+
   Estructura para llenar los datos
 
 ## Tabla de contenido
-
+1. CRM https://github.com/MarthaEdithRdz/crm_app/wiki/CRM
+2. Requerimientos https://github.com/MarthaEdithRdz/crm_app/wiki/Requerimientos
+3. Instalación https://github.com/MarthaEdithRdz/crm_app/wiki/Instalaci%C3%B3n
+4. Configuración https://github.com/MarthaEdithRdz/crm_app/wiki/Configuraci%C3%B3n
+5. Uso https://github.com/MarthaEdithRdz/crm_app/wiki/Uso
+6. Contribución https://github.com/MarthaEdithRdz/crm_app/wiki/Contribuci%C3%B3n
+7. Roadmap https://github.com/MarthaEdithRdz/crm_app/wiki/Roadmap
+   
 ## Getting Started
 
 This project is a starting point for a Flutter application.
